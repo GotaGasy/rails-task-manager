@@ -1,0 +1,22 @@
+<div class="m3 d-flex justify-content-between align-baseline m-3">
+  <%= form_for(task) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: "Type a title", class:'form-control mb-2' %>
+    <%= f.label :detail %>
+    <%= f.text_field :detail, placeholder: "Type a detail for this title", class:'form-control mb-2' %>
+    <%= f.check_box :completed%>
+    <%= f.label :completed, class: '' %>
+    <div class="my-2">
+      <% if task.persisted? %>
+        <%= f.submit 'Edit task', class:'btn btn-primary mt-2' %>
+      <% else %>
+        <%= f.submit 'Create task', class:'mt-2' %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+  <p><%= link_to " Back to list", tasks_path, class: "fas fa-history text-decoration-none" %></p>
+
+<div>
+  <label for=""></label>
+</div>
